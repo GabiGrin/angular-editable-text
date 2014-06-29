@@ -1,0 +1,10 @@
+<div ng-controller="MainCtrl" ng-init="model.text='Hello World'">
+
+
+<h1 edgitable-text="model.text">{{model.text}}</h1>
+
+<p class="text-danger" editable-text="model.text" on-change="func(value)"></p>
+    <input ng-model="model.text"/>
+</div>
+
+

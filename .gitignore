@@ -1,0 +1,5 @@
+# Created by .gitignore support plugin (hsz.mobi)
+node_modules/
+coverage/
+.idea/
+demo/bower_components
