@@ -2,15 +2,14 @@
 
 angular
     .module('editableTextDemo', ['gg.editableText'])
-    .config(function () {
-
+    .config(function (EditableTextHelperProvider) {
+        EditableTextHelperProvider.setWorkingText('blablabla');
     });
 
 angular.module('editableTextDemo')
     .controller('MainCtrl', function ($scope, $timeout, $http, $q) {
 
         $scope.func = function (value) {
-            return value+'1';
 
             var d = $q.defer();
             $timeout(function () {

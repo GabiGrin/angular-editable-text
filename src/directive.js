@@ -5,17 +5,19 @@
 (function () {
     'use strict';
     angular.module('gg.editableText')
-        .directive('editableText', function () {
+        .directive('editableText', function (EditableTextHelper) {
             return {
                 scope: {
                     editableText: '=',
                     editMode: '@',
                     onChange: '&'
                 },
+                transclude: true,
                 template: '<span>' +
                     '<input ng-show="isEditing" ng-blur="isEditing=false;" ng-model="editingValue"/>' +
-                    '<span ng-hide="isEditing || isWorking" ng-click="isEditing=true" >{{editingValue}}</span>' +
-                    '<span class="fa fa-spinner fa-spin text-muted" ng-show="isWorking">Working, please wait..</span>' +
+                    '<span ng-hide="isEditing || isWorking" class="original-text" ng-click="isEditing=true" >{{editingValue}} </span>' +
+                    '<span ng-hide="isEditing" ng-transclude></span>' +
+                    '<span ng-show="isWorking" class="' + EditableTextHelper.workingClassName + '">' + EditableTextHelper.workingText + '</span>' +
                     '</span>',
                 link: function (scope, elem) {
                     var input = elem.find('input');
@@ -33,13 +35,13 @@
                                 //accept promise, or plain function..
                                 editPromise = scope.onChange({value: scope.editingValue});
                                 if (editPromise && editPromise.then) {
-                                    scope.isWorking=true;
+                                    scope.isWorking = true;
                                     editPromise.then(function (value) {
                                         scope.editableText = scope.editingValue = value;
-                                        scope.isWorking=false;
+                                        scope.isWorking = false;
                                     }, function () {
                                         scope.editingValue = scope.editableText;
-                                        scope.isWorking=false;
+                                        scope.isWorking = false;
                                     });
                                 }
                                 else if (editPromise) scope.editableText = scope.editingValue = editPromise;
@@ -48,7 +50,8 @@
                         }
                     });
 
-                    scope.$watch('editingValue', function (newVal) {
+                    scope.$watch('editableText', function (newVal) {
+                        scope.editingValue = newVal;
                     });
                 }
             }

@@ -175,6 +175,10 @@ module.exports = function (grunt) {
             copyhack2:{
                 src:'src/style.css',
                 dest:'demo/style.css'
+            },
+            copyhack3:{
+                src:'src/style.css',
+                dest:'dist/angular-editable.text.css'
             }
         },
         uglify: {
