@@ -5,6 +5,9 @@
 .gg-editable-text .original-text:hover, .gg-editable-text.editing {
     border:dashed #ccc 1px;
 }
+.gg-editable-text input{
+    border:dashed #ccc 1px;
+}
 .gg-editable-text textarea:focus, .gg-editable-text input:focus{
     outline: 0;
 }
