@@ -1,0 +1,24 @@
+
+.gg-editable-text .original-text{
+    border:1px solid transparent;
+}
+.gg-editable-text .original-text:hover, .gg-editable-text.editing {
+    border:dashed #ccc 1px;
+}
+.gg-editable-text textarea:focus, .gg-editable-text input:focus{
+    outline: 0;
+}
+
+.gg-editable-text textarea,.gg-editable-text input{
+    background: inherit;
+    color: inherit;
+    font: inherit;
+    border: inherit;
+    width: 100%;
+    padding: inherit;
+    margin: 0;
+    height:inherit;
+    -webkit-font-smoothing: inherit;
+    line-height:inherit;
+    display:inline-block;
+}
