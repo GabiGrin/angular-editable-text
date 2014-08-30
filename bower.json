@@ -16,24 +16,23 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.2.15",
-    "jquery": "~1.11.0"
+    "angular": "1.2.15"
   },
   "devDependencies": {
     "angular-mocks": "1.2.15",
     "angular-scenario": "1.2.15"
   },
-  "homepage": "http://gabigrin.github.io/angular-validation-messages/",
+  "homepage": "https://github.com/GabiGrin/angular-editable-text",
   "authors": [
     "GabiGrin <gabi.grinberg@gmail.com>"
   ],
-  "description": "Highly customizable directives to add validation messages to your forms easily.",
+  "description": "In place editing for text in AngularJS.",
   "keywords": [
-    "angular",
-    "validation",
-    "validations",
-    "form",
-    "inputs",
+    "editable",
+    "text",
+    "angularjs",
+    "inplace",
+    "editing",
     "directive"
   ],
   "license": "MIT"
