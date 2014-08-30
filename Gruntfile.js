@@ -16,6 +16,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     grunt.loadNpmTasks('grunt-karma-coveralls');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -137,6 +138,18 @@ module.exports = function (grunt) {
                 ]
             },
             server: '.tmp'
+        },
+
+        cssmin: {
+            my_target: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'dist/',
+                    ext: '.min.css'
+                }]
+            }
         },
 
 

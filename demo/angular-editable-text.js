@@ -31,28 +31,30 @@
                     '<span ng-hide="isEditing" ng-transclude></span>' +
                     '<span ng-show="isWorking" class="' + EditableTextHelper.workingClassName + '">' + EditableTextHelper.workingText + '</span>' +
                     '</span>',
-                link: function (scope, elem,attrs) {
+                link: function (scope, elem, attrs) {
                     var input = elem.find('input'),
                         lastValue;
+
+                    scope.isEditing = !!scope.editMode;
 
                     scope.editingValue = scope.editableText;
 
                     elem.addClass('gg-editable-text');
 
                     scope.$watch('isEditing', function (val, oldVal) {
-                        var editPromise,inputElm=input[0];
+                        var editPromise, inputElm = input[0];
                         if (attrs.editMode !== undefined) {
                             scope.editMode = val;
                         }
                         elem[val ? 'addClass' : 'removeClass']('editing');
                         if (val) {
                             inputElm.focus();
-                            inputElm.selectionStart=inputElm.selectionEnd=scope.editingValue.length;
+                            inputElm.selectionStart = inputElm.selectionEnd = scope.editingValue.length;
 
                             //fix for FF
                         }
                         else {
-                            if (scope.onChange && val !== oldVal && scope.editingValue!=lastValue) {
+                            if (scope.onChange && val !== oldVal && scope.editingValue != lastValue) {
                                 //accept promise, or plain function..
                                 editPromise = scope.onChange({value: scope.editingValue});
                                 if (editPromise && editPromise.then) {
