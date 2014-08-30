@@ -1,0 +1,21 @@
+<!--Basic usage-->
+<section id="basic-usage">
+<h3>Basic usage</h3>
+<p>Try editing the titles below. An input that matches their style will be created to allow a seamless editing experience.</p>
+<div class="well">
+    <h4 editable-text="myTitle"></h4>
+    <h4 editable-text="myTitle"></h4>
+    <h4 editable-text="myTitle"></h4>
+    <h4 editable-text="myTitle"></h4>
+    <h4 editable-text="myTitle"></h4>
+</div>
+</section>
+
+<section id="validation">
+    <h3>Validation</h3>
+    <p>You can control and cancel editing by passing a function to "on-change". For more details check the README file.</p>
+    <div class="well" ng-init="noColors='Try entering a name of a basic color';length='Try entering less than 10 chars'">
+              <h4 editable-text="length" on-change="validateLength(value)"></h4>
+              <h4 editable-text="noColors" on-change="validateNoColor(value)"></h4>
+    </div>
+</section>
