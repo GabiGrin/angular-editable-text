@@ -17,7 +17,7 @@ Before creating this, I researched other libraries that seem to be fit for the j
 2. include angular-editable-text.min.js & angular.editable-text.min.css in your project
 3. include the module as a dependency of your app.
     ```
-    angular.module('myApp', ['gg.angular-editable-text'])
+    angular.module('myApp', ['gg.editableText'])
     ```
 4. you are ready to use angular-editable-text!
 
