@@ -246,6 +246,7 @@ module.exports = function (grunt) {
         'concat',
         'ngmin',
         'uglify',
+        'cssmin'
        // 'test',
        // 'coveralls'
     ]);
