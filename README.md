@@ -6,12 +6,13 @@ Angular-editable-text is a directive that lets you turn your title or text into 
 It supports 2-way-data-binding, of course, and methods for validating and saving the text after changing, also via promises.
 
 ## Installation:
-1.install using bower (or by getting the min.js and min.css files from dist library)```
-  $ bower install angular-editable-text
-  ```
+1. install using bower (or by getting the min.js and min.css files from dist library)
+    ```
+    $ bower install angular-editable-text
+    ```
 2. include angular-editable-text.min.js & angular.editable-text.min.css in your project
 3. include the module as a dependency of your app.
-    ```js
+    ```
     angular.module('myApp', ['gg.angular-editable-text'])
     ```
 4. you are ready to use angular-editable-text!
@@ -21,7 +22,15 @@ It supports 2-way-data-binding, of course, and methods for validating and saving
 ## Usage
 
 
-#### Basic usage
+#### Basic:
+
+To allow a line of text, for example, a title of your article editor, to be edited, simply add the "editable-text" attribute set to the relevant property on your model:
+HTML:
+```
+<h1 editable-text="model.myTitle"></h1>
+```
+
+The initial value of the title will be what
 
 
 
