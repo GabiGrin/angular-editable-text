@@ -56,7 +56,7 @@
                                     });
                                 }
                                 else if (editPromise) scope.editableText = scope.editingValue = editPromise;
-                                else scope.editableText = scope.editingValue;
+                                else scope.editingValue = scope.editableText;
                             }
                         }
                     });

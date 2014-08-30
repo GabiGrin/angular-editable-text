@@ -1,7 +1,16 @@
 <div ng-controller="MainCtrl" ng-init="model.text='Hello World';model.isEditing=true">
 
 
-<h1 editable-text="model.text"></h1>
+
+<h1 editable-text="myTitle" on-change="saveToServer(value)"></h1>
+
+    <h2 editable-text="myTitle" edit-mode="isEditing"></h2>
+
+    <span ng-show="isEditing">The above h2 tag is being edited right now!</span> <!-- this will show only when the above component is in edit mode -->
+    <label for="editControl">
+        <input ng-model="isEditing" type="checkbox" id="editControl">
+        Toggle editing
+    </label>
 
 </div>
 
