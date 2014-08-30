@@ -1,6 +1,6 @@
 {
   "name": "angular-editable-text",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "appPath": "demo",
   "main": "dist/",
   "ignore": [
@@ -32,14 +32,14 @@
     "directive"
   ],
   "license": "MIT",
-  "_release": "1.0.1",
+  "_release": "1.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.1",
-    "commit": "eb5ee6395139ce810ef9954ee081b78a1d7389a4"
+    "tag": "v1.0.3",
+    "commit": "fabc62b1515253f0936600fbda6a1741b68bedfe"
   },
   "_source": "git://github.com/GabiGrin/angular-editable-text.git",
-  "_target": "~1.0.1",
+  "_target": "~1.0.3",
   "_originalSource": "angular-editable-text",
   "_direct": true
 }

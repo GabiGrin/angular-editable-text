@@ -46,5 +46,10 @@ angular.module('editableTextDemo')
             },5000);
 
             return dfd.promise;
-        }
+        };
+
+        $scope.testOnchange= function (value) {
+            if (value.indexOf('$')!==-1) return false;
+            return value;
+        };
     });

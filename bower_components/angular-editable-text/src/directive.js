@@ -42,7 +42,7 @@
                             //fix for FF
                         }
                         else {
-                            if (scope.onChange && val !== oldVal && scope.editingValue != lastValue) {
+                            if (attrs.onChange && val !== oldVal && scope.editingValue != lastValue) {
                                 //accept promise, or plain function..
                                 editPromise = scope.onChange({value: scope.editingValue});
                                 if (editPromise && editPromise.then) {
@@ -56,8 +56,9 @@
                                     });
                                 }
                                 else if (editPromise) scope.editableText = scope.editingValue = editPromise;
-                                else scope.editingValue = scope.editableText;
+                                else scope.editingValue=scope.editableText;
                             }
+                            else scope.editableText = scope.editingValue;
                         }
                     });
 
