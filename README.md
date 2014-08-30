@@ -1,27 +1,21 @@
 angular-editable-text
 ===================
 
-A directive that lets you turn your title or text into an editable, good looking component that will match the style of what your text looks like.
-
-
-**Requirements:** AngularJS 1.2+
+##Overview
+Angular-editable-text is a directive that lets you turn your title or text into an editable, good looking component that will match the style of what your text looks like.
+It supports 2-way-data-binding, of course, and methods for validating and saving the text after changing, also via promises.
 
 ## Installation:
-
-1. include the module as a dependency of your app.
-
+1.install using bower (or by getting the min.js and min.css files from dist library)```
+  $ bower install angular-editable-text
+  ```
+2. include angular-editable-text.min.js & angular.editable-text.min.css in your project
+3. include the module as a dependency of your app.
     ```js
     angular.module('myApp', ['gg.angular-editable-text'])
     ```
-    
-2. include the supplied CSS file angular-editable-text.css (or .min.css).
+4. you are ready to use angular-editable-text!
 
-
-
-#### via bower:
-```
-$ bower install angular-editable-text
-```
 
 
 ## Usage
@@ -32,18 +26,8 @@ $ bower install angular-editable-text
 
 
 ## Why I created this
-There are a couple projects similar to this out there, but none were ideal for me.  All implementations I've seen require that you maintain state on behalf of the loading bar.  In other words, you're setting the value of the loading/progress bar manually from potentially many different locations.  This becomes complicated when you have a very large application with several services all making independant XHR requests. It becomes even more complicated if you want these services to be loosly coupled.
+Before creating this, I researched other libraries that seem to be fit for the job, but found that they are either too simple for my use cases, or simply do not look good, and do not keep true to your style.
 
-Additionally, Angular was created as a highly testable framework, so it pains me to see Angular modules without tests.  That is not the case here as this loading bar ships with 100% code coverage.
-
-
-**Goals for this project:**
-
-1. Make it automatic
-2. Unit tests, 100% coverage
-3. Must work well with ngAnimate
-4. Must be styled via external CSS (not inline)
-5. No jQuery dependencies
 
 
 ## Configuration
