@@ -1,24 +1,91 @@
 <!--Basic usage-->
 <section id="basic-usage">
-<h3>Basic usage</h3>
-<p>Try editing the titles below. An input that matches their style will be created to allow a seamless editing experience.</p>
-<div class="well">
-    <h4 editable-text="myTitle"></h4>
-    <h4 editable-text="myTitle"></h4>
-    <h4 editable-text="myTitle"></h4>
-    <h4 editable-text="myTitle"></h4>
-    <h4 editable-text="myTitle"></h4>
-</div>
+    <h3>Basic Usage</h3>
+
+    <p>Try editing the titles below. An input that matches their style will be created to allow a seamless editing
+        experience.</p>
+
+    <div class="well">
+        <h4 editable-text="myTitle"></h4>
+        <h4 editable-text="myTitle"></h4>
+        <h4 editable-text="myTitle"></h4>
+        <h4 editable-text="myTitle"></h4>
+        <h4 editable-text="myTitle"></h4>
+    </div>
 </section>
 
 <section id="validation">
     <h3>Validation</h3>
-    <p>You can control and cancel editing by passing a function to "on-change". For more details check the README file.</p>
-    <div class="well" ng-init="noColors='Try entering a name of a basic color';length='Try entering less than 10 chars'">
-              <h4 editable-text="length" on-change="validateLength(value)"></h4>
-              <h4 editable-text="noColors" on-change="validateNoColor(value)"></h4>
+
+    <p>You can control and cancel editing by passing a function to "on-change". For more details check the README
+        file.</p>
+
+    <div class="well"
+         ng-init="noColors='This title doesn\'t like basic colors';length='This one must have more than 10 chars'">
+        <h4 editable-text="length" on-change="validateLength(value)"></h4>
+        <h4 editable-text="noColors" on-change="validateNoColor(value)"></h4>
+    </div>
+</section>
+
+<section id="processing">
+    <h3>Processing</h3>
+
+    <p>The on-change function controls the return value - you can either return the value after a validation, return
+        false to cancel the change, or return a processed value. The first example will apply censorship to <a
+                href="http://www.slate.com/blogs/lexicon_valley/2013/09/11/top_swear_words_most_popular_curse_words_on_facebook.html">bad
+            language</a>, and the other will always add exclamation points.</p>
+
+    <div class="well" ng-init="censure='Try to f*****g curse here!';exclamation='An enthuastic title!'">
+        <h4 editable-text="censure" style="color:#f53350" on-change="censorship(value)"></h4>
+        <h4 editable-text="exclamation" on-change="enthusiastic(value)"></h4>
     </div>
 </section>
 
 
-<i>To be continued...</i>
+<section id="promises">
+    <h3>Handling Async Validation / Processing</h3>
+
+    <p>In real world some validation or processing will involve ajax calls. To tackle this, the on-change function
+        can also receive a promise (based on <a href="https://docs.angularjs.org/api/ng/service/$q">$q</a> syntax),
+        and once resolved with a value, the value will change accordingly. If rejected, the changes will be
+        reverted, and in the meanwhile, a loading message will show (which is configurable).</p>
+
+    <div class="well"
+         ng-init="server='This will mimic a server call upon saving';serverValidation='This title will mimic a server side validation for non-digits'">
+        <h4 editable-text="server" style="color:#00bf2f" on-change="saveToServer(value)"></h4>
+
+        <p class="help-block small">A 2-7 seconds delay is simulated via $timeout, and there is only a 70% chance it
+            will success</p>
+        <h4 editable-text="serverValidation" on-change="validateServer(value)"></h4>
+
+        <p>Here a delayed validation will be applied, to mimic server validation</p>
+    </div>
+</section>
+
+
+<section id="edit-control">
+    <h3>Controlling Edit Mode</h3>
+<p>Controlling and knowing when a component is in edit mode is also possible, by binding a scope variable to the <strong>edit-mode</strong> attribute.
+    You can either control it (for example, have a button invoke the edit mode) or act upon it being edited</p>
+    <div class="well"
+         ng-init="editMode='My Title';">
+        <h4 editable-text="editMode" edit-mode="editModeEdit" style="color:#4455ff"></h4>
+
+        <p ng-show="editModeEdit">The above component is being edited now!</p>
+        <a class="btn btn-info" style="text-decoration: underline;cursor:pointer" ng-click="editModeEdit=true"><span class="fa fa-pencil"></span> Enter edit mode!</a>
+
+
+    </div>
+</section>
+<section id="transclude">
+    <h3>Transcluding Content</h3>
+<p>If there is content you wish to include inside the editable component, but isn't part of the content itself, like an icon or small message, you can put it inside the tag that has the <storng>editable-text</storng> attribute, and it will be automatically transcluded when not editing</p>
+    <div class="well"
+         ng-init="transclude='My Article\'s Title';">
+        <h4 editable-text="transclude" style="color:#088bad">
+            <span style="font-size:0.75em;color:#5c9a50"><span class="fa fa-paper-plane"></span> some message!</span>
+        </h4>
+        <p>Note that the extra message doesn't appear when editing!</p>
+
+    </div>
+</section>

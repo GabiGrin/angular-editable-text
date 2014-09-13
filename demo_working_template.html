@@ -1,0 +1,9 @@
+<!--Basic usage-->
+<section id="basic-usage" ng-init="myTitle='My Title'">
+    <h3>Altering Loading Template</h3>
+    <p>When dealing with promises, the "Working.." message shows when the promise is waiting to be resolved. You can change it by using the <strong>EditableTextHelper</strong> provider in your config phase, and calling <strong>EditableTextHelper.setWorkingText</strong>. Check the source of this page to see how it's done</strong></p>
+    <div class="well">
+        <h4 editable-text="myTitle" on-change="save(value)"></h4>
+        <p>Change the content, and see that the waiting message is different</p>
+    </div>
+</section>
