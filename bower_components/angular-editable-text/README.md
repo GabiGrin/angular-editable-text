@@ -4,6 +4,10 @@ angular-editable-text
 ##Overview
 Angular-editable-text is a directive that lets you turn your title or text into an editable, good looking component that will match the style of what your text looks like.
 It supports 2-way-data-binding, of course, and methods for validating and saving the text after changing, also via promises.
+An input that inherits the text's style is created - no content editable usage, to theoretically there is support for older browsers.
+
+##Demo
+[Here](https://github.com/GabiGrin/angular-editable-text)
 
 ## Why I created this
 Before creating this, I researched other libraries that seem to be fit for the job, but found that they are either too simple for my use cases, or simply do not look good, and do not keep true to your styling (for example, add an input instead of letting you edit your own content).
@@ -17,7 +21,7 @@ Before creating this, I researched other libraries that seem to be fit for the j
 2. include angular-editable-text.min.js & angular.editable-text.min.css in your project
 3. include the module as a dependency of your app.
     ```
-    angular.module('myApp', ['gg.angular-editable-text'])
+    angular.module('myApp', ['gg.editableText'])
     ```
 4. you are ready to use angular-editable-text!
 

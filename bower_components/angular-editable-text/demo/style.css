@@ -24,4 +24,9 @@
     -webkit-font-smoothing: inherit;
     line-height:inherit;
     display:inline-block;
+    text-decoration: inherit;
+}
+
+.gg-editable-text span{
+    text-decoration: inherit;
 }
