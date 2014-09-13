@@ -4,6 +4,7 @@ angular-editable-text
 ##Overview
 Angular-editable-text is a directive that lets you turn your title or text into an editable, good looking component that will match the style of what your text looks like.
 It supports 2-way-data-binding, of course, and methods for validating and saving the text after changing, also via promises.
+An input that inherits the text's style is created - no content editable usage, to theoretically there is support for older browsers.
 
 ##Demo
 [Here](https://github.com/GabiGrin/angular-editable-text)
