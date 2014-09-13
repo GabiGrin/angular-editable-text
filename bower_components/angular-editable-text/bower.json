@@ -1,7 +1,7 @@
 {
   "name": "angular-editable-text",
-  "version": "1.0.1",
-  "appPath": "demo",
+  "version": "1.0.5",
+  "appPath": "dist",
   "main": "dist/",
   "ignore": [
     "images/",
