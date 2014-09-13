@@ -54,7 +54,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['src/*.css'],
-                tasks: ['concat:copyhack2']
+                tasks: ['concat:copyhack2','concat:copyhack3','cssmin']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
