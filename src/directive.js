@@ -15,7 +15,7 @@
                 },
                 transclude: true,
                 template: '<span>' +
-                    '<input ng-show="isEditing" ng-blur="isEditing=false;" ui-keypress="{\'enter\':\'isEditing=false;\'}" ng-model="editingValue" placeholder="{{placeholder}}"/>' +
+                    '<input ng-show="isEditing" ng-blur="isEditing=false;" ng-keypress="($event.which === 13) && (isEditing = false)" ng-model="editingValue" placeholder="{{placeholder}}"/>' +
                     '<span ng-hide="isEditing || isWorking" class="original-text" tabindex="0" ng-click="isEditing=true" ng-focus="isEditing=true;">{{placeholder ? (editingValue ? editingValue : placeholder) : editingValue}}</span>' +
                     '<span ng-hide="isEditing" ng-transclude></span>' +
                     '<span ng-show="isWorking" class="' + EditableTextHelper.workingClassName + '">' + EditableTextHelper.workingText + '</span>' +
