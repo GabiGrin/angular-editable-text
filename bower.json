@@ -1,0 +1,22 @@
+{
+  "name": "angular-editable-text-demo",
+  "version": "1.0.0",
+  "homepage": "https://github.com/GabiGrin/angular-editable-text",
+  "authors": [
+    "GabiG <gabrielg@wix.com>"
+  ],
+  "description": "demo for angular editable text",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.15",
+    "font-awesome": "~4.2.0",
+    "angular-editable-text": "~1.1.0"
+  }
+}
