@@ -52,7 +52,7 @@ This will make your title editable on click. Note that whatever was inside your 
 ```
 
 
-Also, a "is-placeholder" class will be added so you can style it your own way (@#2)
+Also, a "is-placeholder" class will be added so you can style it your own way (#2)
 
 Credit goes to @mmaday!
 
