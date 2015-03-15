@@ -46,6 +46,16 @@ $scope.myTitle='My Initial Title';
 
 This will make your title editable on click. Note that whatever was inside your HTML tag will be transcluded and won't be affected by the dynamic editing part.
 
+### Placeholder:
+```
+<h1 editable-text="myText" placeholder="your placeholder text">
+```
+
+
+Also, a "is-placeholder" class will be added so you can style it your own way (@#2)
+
+Credit goes to @mmaday!
+
 #### Validating processing, and server requests
 To validate content, process it or send it to your server, you can pass a function as the "on-change" attribute, with *value* as its parameter, as following: 
 
