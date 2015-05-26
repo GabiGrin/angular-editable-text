@@ -17,7 +17,7 @@
 (function () {
   'use strict';
   angular.module('gg.editableText')
-    .directive('editableText', function (EditableTextHelper) {
+    .directive('editableText', ['EditableTextHelper', function (EditableTextHelper) {
       return {
         scope: {
           editableText: '=',
@@ -84,7 +84,7 @@
           });
         }
       }
-    });
+    }]);
 })();
 
 /**
